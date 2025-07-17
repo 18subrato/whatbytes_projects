@@ -1,4 +1,5 @@
 'use client'
+
 import useProduct from "@/context/ProductContext";
 
 function Items({ image, id, title, price }) {
