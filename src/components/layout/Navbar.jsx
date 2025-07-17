@@ -1,30 +1,23 @@
-import next from "next";
 import { Search, ShoppingCart } from "lucide-react";
 
 function Navbar() {
   return (
-    <div className="bg-blue-600 max-w-screen flex text-white px-4 md:px-10 py-4 md:py-8 justify-between items-center">
+    <div className="bg-blue-600 max-w-screen flex items-center px-10 py-8 justify-between">
       <div>
-        <h3 className="lg:text-4xl lg:font-bold font-semibold text-2xl">LOGO</h3>
+        <h3 className="lg:text-4xl text-xl text-white font-bold ">LOGO</h3>
       </div>
-      <div className="flex items-center gap-4 md:gap-10">
-        <div className="flex">
-          <div className="flex items-center py-2 px-3 gap-2 md:gap-4 border border-white">
-            <Search size={20} />
-            <input
-              type="text"
-              placeholder="Search for products..."
-              className="outline-none hidden md:block w-[200px] lg:w-[400px] bg-transparent"
-            />
-          </div>
+      <div className="flex gap-10">
+        <div className=" relative hidden lg:block">
+          <Search className="absolute top-1.5 lg:top-2.5 left-1.5 text-white " />
+          <input type="text"  placeholder="Search for Products..." className="border-2 border-blue-400 rounded-md w-[300px] xl:w-[400px] pl-10 p-2 outline-none text-white" />
         </div>
-        <div className="flex items-center gap-2 md:gap-3 bg-blue-950 px-3 py-2 md:px-4">
-          <ShoppingCart size={20} />
-          <button className="hidden md:block">Cart</button>
+        <div className=" relative lg:hidden mr-4">
+          <Search  className="absolute top-1.5 lg:top-2.5 left-1.5 text-white " />
         </div>
+        <button className="flex bg-blue-950 outline-none justify-center items-center md:px-10 px-4 py-2 font-bold rounded-md text-white gap-2 cursor-pointer"><ShoppingCart /><span>Cart</span></button>
       </div>
     </div>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar
